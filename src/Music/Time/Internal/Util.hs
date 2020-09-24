@@ -36,7 +36,6 @@ module Music.Time.Internal.Util
     tripped,
     through,
     uncurry3,
-    partial,
     partial2,
     partial3,
     _zipList,
@@ -219,10 +218,6 @@ tripl ((a, b), c) = (a, b, c)
 
 tripr :: (a, (b, c)) -> (a, b, c)
 tripr (a, (b, c)) = (a, b, c)
-
--- TODO mo
-partial :: (a -> Bool) -> a -> Maybe a
-partial p x = if p x then Just x else Nothing
 
 partial2 :: (a -> b -> Bool) -> a -> b -> Maybe b
 

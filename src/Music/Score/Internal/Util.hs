@@ -40,7 +40,6 @@ module Music.Score.Internal.Util
     dup,
     mergeBy,
     mergeBy',
-    partial,
     partial2,
     partial3,
     list,
@@ -215,10 +214,6 @@ tripl ((a, b), c) = (a, b, c)
 
 tripr :: (a, (b, c)) -> (a, b, c)
 tripr (a, (b, c)) = (a, b, c)
-
--- TODO mo
-partial :: (a -> Bool) -> a -> Maybe a
-partial p x = if p x then Just x else Nothing
 
 partial2 :: (a -> b -> Bool) -> a -> b -> Maybe b
 
