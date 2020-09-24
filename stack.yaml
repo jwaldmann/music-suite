@@ -1,0 +1,27 @@
+resolver: nightly-2020-09-24
+
+packages:
+- .
+
+extra-deps:
+- average-0.6.1
+- iso-deriving-0.0.8
+- modular-arithmetic-2.0.0.1
+- git: https://github.com/asr/monadplus
+  commit: c4231e1423e5c81f2779acf4462eea8872f6a4e6
+- positive-0.4.1
+- prettify-1.0
+- roman-numerals-0.5.1.5
+- type-unary-0.3.2
+- applicative-numbers-0.1.3
+- ty-0.1.7
+- typelits-witnesses-0.4.0.0
+- dependent-sum-0.7.1.0
+- constraints-extras-0.3.0.2
+- git:  https://github.com/jwaldmann/lilypond-parse
+  commit: adfd80122315cbbbeb2a03109860b9b6ecca5d59
+
+compiler-check: newer-minor
+install-ghc: false
+system-ghc: true
+allow-newer: true
