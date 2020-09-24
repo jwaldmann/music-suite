@@ -6,7 +6,6 @@
   -Wcompat
   -Wincomplete-record-updates
   -Wincomplete-uni-patterns
-  -Werror
   -fno-warn-missing-local-signatures
   -fno-warn-unsafe
   -fno-warn-unused-type-patterns

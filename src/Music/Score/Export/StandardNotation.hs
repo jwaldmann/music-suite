@@ -2085,7 +2085,7 @@ toStandardNotation sc' = do
         LabelTree BracketType Staff =
           concatLT Subbracket staffVoices
   say $ "System staff bars: " ++ show (length systemStaff)
-  say $ "Regular staff bars: " ++ show (fmap (length . _bars) . toList $ staves)
+  say $ "Regular staff bars: " ++ show (fmap (length . _bars) $ staves)
   return $ Work mempty [Movement info systemStaff staves]
   where
     info =
