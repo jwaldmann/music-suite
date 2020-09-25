@@ -215,6 +215,7 @@ import Data.Colour.Names
 import Data.FileEmbed
 import Data.Functor.Couple
 import Data.Functor.Identity (Identity (..))
+import qualified Data.Foldable as F
 import qualified Data.List
 import Data.List.NonEmpty (NonEmpty)
 import qualified Data.List.NonEmpty
@@ -865,7 +866,7 @@ movementAssureSameNumberOfBars (Movement i ss st) =
     addSystemBars n = take n . (++ repeat emptySystemBar)
     n = maximum $ 0 : numBars
     -- numSystemBars :: Int = length ss
-    numBars :: [Int] = fmap (length . _bars) $ toList st
+    numBars :: [Int] = fmap (length . _bars) $ F.toList st
 
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
@@ -2085,7 +2086,7 @@ toStandardNotation sc' = do
         LabelTree BracketType Staff =
           concatLT Subbracket staffVoices
   say $ "System staff bars: " ++ show (length systemStaff)
-  say $ "Regular staff bars: " ++ show (fmap (length . _bars) $ staves)
+  say $ "Regular staff bars: " ++ show (fmap (length . _bars) . F.toList $ staves)
   return $ Work mempty [Movement info systemStaff staves]
   where
     info =
